@@ -1,0 +1,26 @@
+/* The google map where the client's location is displayed.*/
+#map{
+	
+	/* Have the map fill the screen. */
+	width: 100%;
+	height: 98vh;
+
+	/* Elements will be placed on top of the map. */
+	position: absolute;
+	
+}
+
+/* Where the list of options will be displayed. */
+#glassLocationSelectionPane{
+
+	/* Position at right side of screen over map */
+	float: right;
+	position: absolute;
+	
+	/* Fill height of screen. */
+	height: 98vh;
+	width: 25%;
+
+	background-color: grey;
+
+}
