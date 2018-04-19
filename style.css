@@ -2,7 +2,7 @@
 #map{
 	
 	/* Have the map fill the screen. */
-	width: 100%;
+	width: 99%;
 	height: 98vh;
 
 	/* Elements will be placed on top of the map. */
@@ -22,5 +22,23 @@
 	width: 25%;
 
 	background-color: grey;
+
+}
+
+.locationListItem{
+
+	/
+	color: black;
+	text-align: center;
+	font-size: 2em;
+
+	/* Put border around each item */
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	border-radius: 15px;
+
+	margin:3%;
+	padding: 3%;
 
 }

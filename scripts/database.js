@@ -35,12 +35,23 @@ function updateLocationsList(data){
 	var locations = data.val();
 	var keys = Object.keys(locations);
 
-	var names = new Array(keys.length);
+	var locationData = new Array(keys.length);
 
 	for(var i = 0; i < keys.length; i++){
- 		names[i] = locations[keys[i]].name;	
+ 		locationData[i] = {
+ 			name: locations[keys[i]].name,
+ 			lat: locations[keys[i]].lat,
+ 			lng: locations[keys[i]].lon
+ 		}	
 	}
 
-	listLocations(names);	
+	listLocations(locationData);	
 
+}
+
+function updateSuggestedLocation(lat, lon){
+
+	firebase.database().ref('suggested-location-lat').set(lat);
+	firebase.database().ref('suggested-location-lon').set(lon);
+	
 }

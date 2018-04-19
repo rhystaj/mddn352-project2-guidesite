@@ -1,32 +1,41 @@
-var locationsList = document.getElementById("glassLocationSelectionPane");
+var locationData;
 
 //Output the given names to the locations list.
-function listLocations(names){
+function listLocations(locData){
 
-	alert("updatingList");
+	var locationsList = document.getElementById("glassLocationSelectionPane");
 
 	removeAllElementsFrom(locationsList);
 
-	for(var i = 0; i < names.length; i++){
+	locationData = locData;
+	for(var i = 0; i < locationData.length; i++){
 
-		alert(names[i]);
+		var location = document.createTextNode(locationData[i].name);
+		var locationText = document.createElement("P");
 
-		var location = document.createTextNode("noed");
-		locationsList.appendChild(location);
+		locationText.appendChild(location);
+		locationText.className = "locationListItem";
+
+		locationText.style.cursor = 'pointer';
+		locationText.addEventListener('click', function(e){
+			alert(e.target.innerText);
+		});
+
+		locationsList.appendChild(locationText);
 
 	}
 
 }
 
+function locationClicked(){
+	alert("click");
+}
+
 //Clear the children of the given node.
 function removeAllElementsFrom(target){
 
-	alert("removing elements");
-
-	// while(target.hasChildNodes()){
-	// 	target.removeChild(target.firstChild);
-	// }
-
-	alert("elements removed");
+	while(target.hasChildNodes()){
+		target.removeChild(target.firstChild);
+	}
 
 }

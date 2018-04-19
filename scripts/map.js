@@ -1,3 +1,5 @@
+const WELLINGTON = {lat: -41.286460, lng: 174.776236}
+
 var map = null;
 var marker = null;
 
@@ -5,6 +7,8 @@ var marker = null;
 	Loads the imbedded map onto the page.
 */
 function myMap(){
+
+	alert("map");
 
 	//Create Map
 	map = new google.maps.Map(document.getElementById("map"),{
