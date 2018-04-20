@@ -1,5 +1,3 @@
-alert("database");
-
 // Initialize Firebase
 var config = {
 	apiKey: "AIzaSyC3JXCDZGe1IsARvhe_Z7q9g9_LoYnpwjQ",
@@ -10,6 +8,7 @@ var config = {
 	messagingSenderId: "506392227937"
 };
 firebase.initializeApp(config);
+
 
 //Listen for and respond to client location changes in the database.
 var coords = {lat: 0, lng: 0}
@@ -26,6 +25,7 @@ lngRef.on('value', lng => {
 	updateMarkerPositions(coords);
 });
 
+
 //Listen for changes to the avaliable locations and list them.
 locationsRef = firebase.database().ref('location-suggestions');
 locationsRef.on('value', updateLocationsList);
@@ -41,7 +41,7 @@ function updateLocationsList(data){
  		locationData[i] = {
  			name: locations[keys[i]].name,
  			lat: locations[keys[i]].lat,
- 			lng: locations[keys[i]].lon
+ 			lon: locations[keys[i]].lon
  		}	
 	}
 
@@ -51,7 +51,9 @@ function updateLocationsList(data){
 
 function updateSuggestedLocation(lat, lon){
 
-	firebase.database().ref('suggested-location-lat').set(lat);
-	firebase.database().ref('suggested-location-lon').set(lon);
+	alert("updating locations");
+
+	firebase.database().ref("suggested-location-lat").set(lat);
+	firebase.database().ref("suggested-location-lon").set(lon);
 	
 }
