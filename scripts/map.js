@@ -8,8 +8,6 @@ var marker = null;
 */
 function myMap(){
 
-	alert("map");
-
 	//Create Map
 	map = new google.maps.Map(document.getElementById("map"),{
 		zoom: 15,
