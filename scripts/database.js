@@ -48,8 +48,6 @@ function updateLocationsList(data){
 
 function updateSuggestedLocation(lat, lon){
 
-	alert("updating locations");
-
 	firebase.database().ref("suggested-location").child("lat").set(lat);
 	firebase.database().ref("suggested-location").child("lon").set(lon);
 	
