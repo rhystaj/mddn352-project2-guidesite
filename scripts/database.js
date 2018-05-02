@@ -12,18 +12,15 @@ firebase.initializeApp(config);
 
 //Listen for and respond to client location changes in the database.
 var coords = {lat: 0, lng: 0}
-var latRef = firebase.database().ref().child('client-location-lat');
-var lngRef = firebase.database().ref().child('client-location-lon');
+var clientLocationRef = firebase.database().ref("client-location");
 
-latRef.on('value', lat => {
-	coords.lat = parseFloat(lat.val());
-	updateMarkerPositions(coords);
-});
+clientLocationRef.on('value', loc => {
 
-lngRef.on('value', lng => {
-	coords.lng = parseFloat(lng.val());
+	coords.lat = parseFloat(loc.child("lat").val());
+	coords.lng = parseFloat(loc.child("lon").val());
 	updateMarkerPositions(coords);
-});
+
+})
 
 
 //Listen for changes to the avaliable locations and list them.
@@ -53,7 +50,7 @@ function updateSuggestedLocation(lat, lon){
 
 	alert("updating locations");
 
-	firebase.database().ref("suggested-location-lat").set(lat);
-	firebase.database().ref("suggested-location-lon").set(lon);
+	firebase.database().ref("suggested-location").child("lat").set(lat);
+	firebase.database().ref("suggested-location").child("lon").set(lon);
 	
 }

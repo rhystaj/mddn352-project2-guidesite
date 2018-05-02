@@ -7,7 +7,14 @@
 
 	/* Elements will be placed on top of the map. */
 	position: absolute;
+
+	background-color: grey;
 	
+}
+
+@font-face{
+	font-family: Sarabun;
+	src: url(font/Sarabun.ttf);
 }
 
 /* Where the list of options will be displayed. */
@@ -21,16 +28,18 @@
 	height: 98vh;
 	width: 25%;
 
-	background-color: grey;
+	background-color: rgb(141, 163, 153);
+
+	font-family: Sarabun;
 
 }
 
 .locationListItem{
 
-	/
+	
 	color: black;
 	text-align: center;
-	font-size: 2em;
+	font-size: 3em;
 
 	/* Put border around each item */
 	border-style: solid;
@@ -39,6 +48,6 @@
 	border-radius: 15px;
 
 	margin:3%;
-	padding: 3%;
+	padding: 0%;
 
 }
